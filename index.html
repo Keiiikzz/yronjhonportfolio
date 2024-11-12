@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "RWZm_LoD7iXbPDW4y",
+      });
+   })();
+</script>
 
 </head>
 <body>
@@ -33,7 +43,7 @@
 
         <div class="home-content">
             <h1>Hi, It's <span>Yron</span></h1>
-            <h3>I'm a <span id="typing"></span></h3>
+            <h3>I'm a <span id="typing">Computer Engineer</span></h3>
             <p>I am seeking for a position where I can contribute effectively with my skills in Front-end within the company</p>
 
             <div class="social-icons">
@@ -117,20 +127,17 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
     
-        <form action="">
+        <form action="" onsubmit="sendMail(event)">
             <div class="form-container">
-                <!-- Left Side: Full Name, Email, Phone Number, Subject -->
                 <div class="form-left">
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email">
-                    <input type="number" placeholder="Phone number">
-                    <input type="text" placeholder="Subject">
+                    <input type="text" placeholder="Full Name" id="fullname" required>
+                    <input type="email" placeholder="Email" id="email" required>
+                    <input type="number" placeholder="Phone number" id="phone" required>
+                    <input type="text" placeholder="Enter your Prefered name" id="subject" required>
                 </div>
-    
-                <!-- Right Side: Your Message -->
                 <div class="form-right">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-                    <input type="submit" value="Send Message" class="btn">
+                    <textarea id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn">Submit</button>
                 </div>
             </div>
         </form>
